@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="address" class="com.bug.di.Address">
+		<property name="address" value="四川省深圳市"/>
+	</bean>
+	<bean id="abc" class="com.bug.di.Student">
+		<property name="str" value="张三"/>
+		<property name="address" ref="address"/>
+		<property name="books">
+			<array>
+				<value>第一行代码</value>
+				<value>计算机网络通信</value>
+				<value>数据结构与算法</value>	
+			</array>
+		</property>
+		<property name="hob">
+			<list>
+				<value>敲代码</value>
+				<value>听音乐</value>
+				<value>看小说</value>
+			</list>
+		</property>
+		<property name="card">
+			<map>
+				<!-- key="" value-ref="" -->
+				<entry key="身份证" value="94376728554"/>
+				<entry key="银行卡" value="61943443678"/>
+			</map>
+		</property>
+		<property name="games">
+			<set>
+				<value>英雄联盟</value>
+				<value>PUBG</value>
+				<value>欢乐斗地主</value>
+				<!--ref bean="" -->
+			</set>
+		</property>
+		<property name="wife">
+			<null/>
+		</property>
+		<property name="info">
+			<props>
+				<prop key="性别">男</prop>
+				<prop key="学历">小学</prop>
+				<prop key="学号">16497</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
